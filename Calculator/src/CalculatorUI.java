@@ -13,10 +13,18 @@ public class CalculatorUI {
 
 	private JFrame frame;
 	private JTextField textField;
-	private JButton btnbck;
+	/*private JButton btnbck;
 	private JButton btnclr;
 	private JButton btnper;
-	private JButton btnPM;
+	private JButton btnPM; */
+	
+	double firstnum;
+	double secondnum;
+	double result;
+	String operations;
+	String answer;
+	
+	
 
 	/**
 	 * Launch the application.
@@ -64,6 +72,15 @@ public class CalculatorUI {
 		btnbck = new JButton("<-");
 		btnbck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				String backspace= null;
+				if (textField.getText().length() > 0)
+				{
+				StringBuilder strB = new StringBuilder(textField.getText());
+					strB.deleteCharAt(textField.getText().length()- 1);
+					backspace = strB.toString();
+				 textField.setText(backspace);
+				}										
 			}
 		});
 		btnbck.setForeground(new Color(0, 0, 0));
@@ -86,6 +103,10 @@ public class CalculatorUI {
 		btnper = new JButton("%");
 		btnper.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				firstnum = Double.parseDouble(textField.getText());
+				textField.setText("");
+				operations = "%";
 			}
 		});
 		btnper.setForeground(new Color(0, 0, 0));
@@ -97,6 +118,11 @@ public class CalculatorUI {
 		btnPM = new JButton("+\r\n-");
 		btnPM.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+			double ops = Double.parseDouble(String.valueOf(textField.getText()));
+			ops = ops * (-1);
+			textField.setText(String.valueOf(ops));
+			
 			}
 		});
 		btnPM.setForeground(Color.BLACK);
@@ -112,6 +138,11 @@ public class CalculatorUI {
 		JButton btn7 = new JButton("7");
 		btn7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				String Enternumber = textField.getText() + btn7.getText();
+				textField.setText(Enternumber);
+				
 			}
 		});
 		btn7.setForeground(new Color(0, 0, 0));
@@ -122,6 +153,10 @@ public class CalculatorUI {
 		JButton btn8 = new JButton("8");
 		btn8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				String Enternumber = textField.getText() + btn8.getText();
+				textField.setText(Enternumber);
+				
 			}
 		});
 		btn8.setForeground(Color.BLACK);
@@ -132,6 +167,11 @@ public class CalculatorUI {
 		JButton btn9 = new JButton("9");
 		btn9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				String Enternumber = textField.getText() + btn9.getText();
+				textField.setText(Enternumber);
+				
 			}
 		});
 		btn9.setForeground(new Color(0, 0, 0));
@@ -142,6 +182,12 @@ public class CalculatorUI {
 		JButton btndiv = new JButton("/");
 		btndiv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				
+				firstnum = Double.parseDouble(textField.getText());
+				textField.setText("");
+				operations = "/";
 			}
 		});
 		btndiv.setForeground(Color.BLACK);
@@ -156,6 +202,11 @@ public class CalculatorUI {
 		JButton btn4 = new JButton("4");
 		btn4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				String Enternumber = textField.getText() + btn4.getText();
+				textField.setText(Enternumber);
+				
 			}
 		});
 		btn4.setForeground(new Color(0, 0, 0));
@@ -166,6 +217,10 @@ public class CalculatorUI {
 		JButton btn5 = new JButton("5");
 		btn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				String Enternumber = textField.getText() + btn5.getText();
+				textField.setText(Enternumber);
+				
 			}
 		});
 		btn5.setForeground(Color.BLACK);
@@ -176,6 +231,10 @@ public class CalculatorUI {
 		JButton btn6 = new JButton("6");
 		btn6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				String Enternumber = textField.getText() + btn6.getText();
+				textField.setText(Enternumber);
+				
 			}
 		});
 		btn6.setForeground(new Color(0, 0, 0));
@@ -186,6 +245,11 @@ public class CalculatorUI {
 		JButton btnmul= new JButton("*");
 		btnmul.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				firstnum = Double.parseDouble(textField.getText());
+				textField.setText("");
+				operations = "*";
+				
 			}
 		});
 		btnmul.setForeground(Color.BLACK);
@@ -214,6 +278,10 @@ public class CalculatorUI {
 		JButton btn2 = new JButton("2");
 		btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				String Enternumber = textField.getText() + btn2.getText();
+				textField.setText(Enternumber);
+				
 			}
 		});
 		btn2.setForeground(Color.BLACK);
@@ -224,6 +292,10 @@ public class CalculatorUI {
 		JButton btn3 = new JButton("3");
 		btn6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				String Enternumber = textField.getText() + btn3.getText();
+				textField.setText(Enternumber);
+				
 			}
 		});
 		btn3.setForeground(new Color(0, 0, 0));
@@ -234,6 +306,10 @@ public class CalculatorUI {
 		JButton btnsub= new JButton("-");
 		btnsub.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				firstnum = Double.parseDouble(textField.getText());
+				textField.setText("");
+				operations = "-";
 			}
 		});
 		btnsub.setForeground(Color.BLACK);
@@ -246,6 +322,10 @@ public class CalculatorUI {
 		JButton btn0 = new JButton("0");
 		btn0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				String Enternumber = textField.getText() + btn0.getText();
+				textField.setText(Enternumber);
+				
 			}
 		});
 		btn0.setForeground(new Color(0, 0, 0));
@@ -265,7 +345,16 @@ public class CalculatorUI {
 		
 		JButton btnplus = new JButton("+");
 		btnplus.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e)
+			{
+				
+				/*firstnum = Double.parseDouble(textField.getText());
+				textField.setText("");
+				operations = "+"; */
+				firstnum = Double.parseDouble(textField.getText());
+				textField.setText("");
+				operations = "+";	
+				
 			}
 		});
 		btnplus.setForeground(new Color(0, 0, 0));
@@ -278,6 +367,40 @@ public class CalculatorUI {
 		btnequal.setForeground(Color.BLACK);
 		btnequal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				String answer;
+				secondnum = Double.parseDouble(textField.getText());
+				
+				if (operations == "+")
+				{
+					result = firstnum + secondnum;
+					answer = String.format("%.2f",result);
+					textField.setText(answer);		
+				}
+				else if (operations == "-")
+				{
+					result = firstnum - secondnum;
+					answer = String.format("%.2f",result);
+					textField.setText(answer);	
+					
+				}
+				else if (operations == "*")
+				{
+					result = firstnum * secondnum;
+					answer = String.format("%.2f",result);
+					textField.setText(answer);	
+					
+				}
+				
+				else if (operations == "/")
+				{
+					result = firstnum / secondnum;
+					answer = String.format("%.2f",result);
+					textField.setText(answer);	
+					
+				}
+				
+				
 			}
 		});
 		btnequal.setForeground(Color.BLACK);
